@@ -1,0 +1,75 @@
+Python Practice Questions:
+
+1.	Write a Program To REVERSE content of the given String by using slice operator? 
+
+2.	Write a Program To REVERSE content of the given String by using reversed() function? 
+
+3.	Write a Program To REVERSE content of the given String by using while loop? 
+
+4.	Write a Program To REVERSE order of words present in the given string? 
+
+5.	Write a Program To REVERSE internal content of each word? 
+
+6.	Write a Program To REVERSE internal content of every second word present in the given string? 
+
+7.	Write a program to print the characters present at even index and odd index separately for the given string? 
+
+8.	Write a program to merge characters of 2 strings into a single 
+string by taking characters alternatively? 
+
+9.	Assume input string contains only alphabet symbols and digits. Write a program to sort characters of the string, first alphabet symbols followed by digits? 
+	 input=B4A1D3 
+	 output:ABD134 
+
+10.	Write a program for the following requirement? 
+	input=a4b3c2 
+	output=aaaabbbcc 
+
+11. Write a program for the following requirement? 
+	input=a3z2b4 
+	output= aaabbbbzz (sorted String) 
+
+
+12.	Write a program for the following requirement? 
+	input=aaaabbbccz 
+	output=4a3b2c1z 
+
+13.	Write a program for the following requirement? I
+	input= a4k3b2 
+	Output= aeknbd 
+
+14. Write a program to remove duplicate characters from the given input String?
+	
+	Input: AZZZBCDABBCDABBBBCCCCDDDDEEEEEF 
+	Output: AZBCDEF 
+
+15. Write a program to find the number of occurrences of each character present in the given string? 
+
+16.	Write the program for the following requirement: 
+	Input: ABAABBCA 
+	Output: 4A3B1C 
+
+17.. Write the program for the following requirement: 
+	Input: ABAABBCA 
+	Output: A4B3C1 
+
+18. Write a program to find the number of occurrences of each vowel present in the given string? 
+
+19.	Write a program to check whether the given two strings are 
+	anagrams or not? Note:- Two strings are said to be anagrams iff both are having same content irrespective of characters position. 
+
+20. Write a program to check whether the given string is palindrome or not ? 
+21.  Write the program for the following requirement: 
+	inputs: 
+		s1='abcdefg' 
+		s2='xyz' 
+		s3='12345' 
+	output:ax1,by2,cz3,d4,e5,f,g 
+
+
+
+
+
+
+
+
