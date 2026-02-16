@@ -2,8 +2,9 @@ import pytest
 import allure
 from Seleniumpractice.utils.config import Config
 from Seleniumpractice.utils.driver_factory import get_driver
+import os
+import subprocess
 
-from Seleniumpractice.utils.screenshots import take_screenshot
 
 
 @pytest.fixture
@@ -32,3 +33,7 @@ def pytest_runtest_makereport(item, call):
                 attachment_type=allure.attachment_type.PNG
             )
 
+
+def pytest_sessionfinish(session, exitstatus):
+    if os.path.exists("allure-results"):
+        subprocess.run(["allure", "generate", "allure-results", "-o", "allure-report", "--clean"])
