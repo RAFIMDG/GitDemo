@@ -1,6 +1,5 @@
 import pytest
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+import allure
 from Seleniumpractice.utils.config import Config
 from Seleniumpractice.utils.driver_factory import get_driver
 
@@ -27,6 +26,9 @@ def pytest_runtest_makereport(item, call):
     if rep.when == "call" and rep.failed:
         driver = item.funcargs.get("driver")
         if driver:
-            test_name = item.name
-            path = take_screenshot(driver, test_name)
-            print(f"\nScreenshot saved at: {path}")
+            allure.attach(
+                driver.get_screenshot_as_png(),
+                name=f"{item.name}_failure",
+                attachment_type=allure.attachment_type.PNG
+            )
+
