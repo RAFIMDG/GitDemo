@@ -36,4 +36,8 @@ def pytest_runtest_makereport(item, call):
 
 def pytest_sessionfinish(session, exitstatus):
     if os.path.exists("allure-results"):
-        subprocess.run(["allure", "generate", "allure-results", "-o", "allure-report", "--clean"])
+        subprocess.run([
+            "/Users/grrafi/.jenkins/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/allure/bin/allure",
+            "generate", "allure-results", "-o", "allure-report", "--clean"
+        ])
+
