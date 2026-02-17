@@ -1,7 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from Seleniumpractice.utils.config import Config
+from utils.config import Config
 
 
 class WaitUtils:

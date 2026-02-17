@@ -1,4 +1,4 @@
-from Seleniumpractice.utils.waits_utils import WaitUtils
+from utils.waits_utils import WaitUtils
 
 
 class BasePage:

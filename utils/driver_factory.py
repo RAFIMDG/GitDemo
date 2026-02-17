@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
-from Seleniumpractice.utils.config import Config
+from utils.config import Config
 
 
 def get_driver():

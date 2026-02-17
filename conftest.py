@@ -1,7 +1,7 @@
 import pytest
 import allure
-from Seleniumpractice.utils.config import Config
-from Seleniumpractice.utils.driver_factory import get_driver
+from utils.config import Config
+from utils.driver_factory import get_driver
 import os
 import subprocess
 

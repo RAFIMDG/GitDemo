@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-from Seleniumpractice.utils.config import Config  # run pytest from project root
+from utils.config import Config  # run pytest from project root
 
 
 def take_screenshot(driver, test_name, status="failed"):

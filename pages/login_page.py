@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
-from Seleniumpractice.pages.base_page import BasePage
-from Seleniumpractice.utils.config import Config
+from pages.base_page import BasePage
+from utils.config import Config
 
 
 class LoginPage(BasePage):
