@@ -18,5 +18,3 @@ class BasePage:
     def get_text(self, locator):
         return self.wait.wait_for_visibility(locator).text
 
-    def is_visible(self, locator):
-        return self.wait.wait_for_visibility(locator)
