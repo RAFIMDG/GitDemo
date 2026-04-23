@@ -1,0 +1,124 @@
+{
+  "company": {
+    "name": "TechNova Solutions",
+    "founded": 2015,
+    "isActive": true,
+    "departments": [
+      {
+        "id": "D001",
+        "name": "Engineering",
+        "manager": {
+          "id": 101,
+          "name": "Rahul Mehta",
+          "contact": {
+            "email": "rahul.mehta@technova.com",
+            "phone": "+91-9876543210"
+          }
+        },
+        "teams": [
+          {
+            "teamId": "ENG-BE",
+            "name": "Backend Team",
+            "members": [
+              {
+                "id": 201,
+                "name": "Ananya Sharma",
+                "skills": ["Python", "Django", "PostgreSQL"],
+                "experienceYears": 5,
+                "isRemote": true
+              },
+              {
+                "id": 202,
+                "name": "Vikram Rao",
+                "skills": ["Java", "Spring Boot"],
+                "experienceYears": 4,
+                "isRemote": false
+              }
+            ]
+          },
+          {
+            "teamId": "ENG-FE",
+            "name": "Frontend Team",
+            "members": [
+              {
+                "id": 203,
+                "name": "Neha Kapoor",
+                "skills": ["React", "JavaScript", "CSS"],
+                "experienceYears": 3,
+                "isRemote": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D002",
+        "name": "Human Resources",
+        "manager": {
+          "id": 102,
+          "name": "Priya Nair",
+          "contact": {
+            "email": "priya.nair@technova.com",
+            "phone": "+91-9123456780"
+          }
+        },
+        "teams": []
+      }
+    ]
+  },
+  "projects": [
+    {
+      "projectId": "P1001",
+      "name": "AI Chatbot Platform",
+      "status": "ongoing",
+      "budget": 1500000,
+      "technologies": ["Python", "TensorFlow", "Docker"],
+      "assignedDepartments": ["Engineering"],
+      "milestones": [
+        {
+          "title": "Prototype",
+          "completed": true,
+          "completionDate": "2025-12-01"
+        },
+        {
+          "title": "Beta Release",
+          "completed": false,
+          "completionDate": null
+        }
+      ]
+    },
+    {
+      "projectId": "P1002",
+      "name": "HR Management System",
+      "status": "completed",
+      "budget": 500000,
+      "technologies": ["Node.js", "MongoDB"],
+      "assignedDepartments": ["Engineering", "Human Resources"],
+      "milestones": [
+        {
+          "title": "Development",
+          "completed": true,
+          "completionDate": "2025-06-15"
+        },
+        {
+          "title": "Deployment",
+          "completed": true,
+          "completionDate": "2025-08-01"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "notifications": {
+      "email": true,
+      "sms": false,
+      "push": true
+    },
+    "backup": {
+      "enabled": true,
+      "frequency": "daily",
+      "lastBackup": "2026-04-13T23:30:00Z"
+    }
+  }
+}

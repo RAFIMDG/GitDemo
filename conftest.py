@@ -11,9 +11,22 @@ import subprocess
 def driver():
     driver = get_driver()
     driver.get(Config.BASE_URL)
+    driver.maximize_window()
 
     yield driver
     driver.quit()
+
+
+
+@pytest.fixture
+def login(driver):
+    def do_login(username, password):
+        driver.find_element("id", "user-name").send_keys(username)
+        driver.find_element("id", "password").send_keys(password)
+        driver.find_element("id", "login-button").click()
+        return driver
+
+    return do_login
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
