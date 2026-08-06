@@ -1,51 +1,67 @@
 pipeline {
     agent any
 
+    tools {
+        // Name should match the Allure Commandline tool configured in Jenkins
+        allure 'allure'
+    }
+
     stages {
 
         stage('Checkout') {
             steps {
                 echo 'Installing requirements...'
+                checkout scm
             }
         }
 
         stage('Run Selenium Tests') {
             steps {
-                sh '''
-                    echo "===== Running Python Selenium Tests ====="
+                catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
+                    sh '''
+                        echo "===== Running Python Selenium Tests ====="
 
-                    export PATH=$PATH:/opt/homebrew/bin/allure
+                        python3 --version
 
-                    # Check Python version
-                    python3 --version
+                        # Create virtual environment
+                        python3 -m venv venv
 
-                    # Create virtual environment
-                    python3 -m venv venv
+                        # Activate virtual environment
+                        . venv/bin/activate
 
-                    # Activate virtual environment
-                    . venv/bin/activate
+                        # Upgrade pip
+                        pip install --upgrade pip
 
-                    # Upgrade pip
-                    pip install --upgrade pip
+                        # Install dependencies
+                        pip install -r requirements.txt
 
-                    # Install dependencies
-                    pip install -r requirements.txt
+                        export PYTHONPATH=$PWD
 
-                    export PYTHONPATH=$PWD
+                        # Run tests and generate Allure results
+                        pytest --alluredir=allure-results
 
-                    # Run tests
-                    pytest
-
-                    echo "===== Test Execution Completed ====="
-                '''
+                        echo "===== Test Execution Completed ====="
+                    '''
+                }
             }
         }
     }
 
     post {
+        always {
+            archiveArtifacts artifacts: 'allure-results/**', fingerprint: true
+
+            allure(
+                includeProperties: false,
+                jdk: '',
+                results: [[path: 'allure-results']]
+            )
+        }
+
         success {
             echo 'Build Successful'
         }
+
         failure {
             echo 'Build Failed'
         }
