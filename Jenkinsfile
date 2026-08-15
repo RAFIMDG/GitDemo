@@ -5,6 +5,13 @@ pipeline {
         // Name should match the Allure Commandline tool configured in Jenkins
         allure 'allure'
     }
+    parameters {
+            string(
+                name: 'RETRY_COUNT',
+                defaultValue: '2',
+                description: 'Number of test retries'
+            )
+        }
 
     stages {
 
@@ -38,7 +45,7 @@ pipeline {
                         export PYTHONPATH=$PWD
 
                         # Run tests and generate Allure results
-                        pytest --alluredir=allure-results
+                        pytest -v --reruns ${RETRY_COUNT}  --reruns-delay 2 --alluredir=allure-results
 
                         echo "===== Test Execution Completed ====="
                     '''
