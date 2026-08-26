@@ -21,5 +21,5 @@ class  Config:
     PASSWORD = os.getenv("APP_PASSWORD", "secret_sauce")
 
 
-    BROWSER= os.getenv("BROWSE", "chrome")
+    BROWSER= os.getenv("BROWSER", "chrome")
     HEADLESS = os.getenv("HEADLESS", "false").lower() == "true"
