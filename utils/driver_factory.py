@@ -1,29 +1,24 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options as ChromeOptions
-from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from drivers.chrome import ChromeBrowser
+from drivers.firefox import FirefoxBrowser
 from utils.config import Config
 
 
-def get_driver():
-    browser = Config.BROWSER.lower()
-    if browser == "chrome":
-        options = ChromeOptions()
-        if Config.HEADLESS:
-            options.add_argument("--headless")
-        driver = webdriver.Chrome(options=options)
+def get_driver(browser_name):
 
-    elif browser == "firefox":
-        options = FirefoxOptions()
-        if Config.HEADLESS:
-            options.add_argument("--headless")
-        driver = webdriver.Firefox(options=options)
+    browsers = {
+        "chrome": ChromeBrowser,
+        "firefox": FirefoxBrowser
+    }
 
-    else:
-        raise Exception("Unsupported browser")
+    browser_class = browsers.get(browser_name.lower())
 
+    if not browser_class:
+        raise ValueError(
+            f"Unsupported browser: {browser_name}"
+        )
+    browser = browser_class()
+    driver = browser.create_driver()
     driver.implicitly_wait(Config.IMPLICIT_WAIT)
     driver.maximize_window()
+
     return driver
-
-
-

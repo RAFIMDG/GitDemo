@@ -6,14 +6,22 @@ import os
 import subprocess
 
 
+def pytest_parser(parser):
+    parser.addoption("--browser",
+                     actions="store",
+                     default="chrome",
+                     help ="Browser to run tests: chrome or firefox")
+
+
 
 @pytest.fixture
-def driver():
-    driver = get_driver()
+def driver(request):
+    browser = request.config.getoption("--browser")
+    driver = get_driver(browser)
     driver.get(Config.BASE_URL)
-    driver.maximize_window()
 
     yield driver
+
     driver.quit()
 
 
