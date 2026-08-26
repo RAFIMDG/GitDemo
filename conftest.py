@@ -6,9 +6,9 @@ import os
 import subprocess
 
 
-def pytest_parser(parser):
+def pytest_addoption(parser):
     parser.addoption("--browser",
-                     actions="store",
+                     action="store",
                      default="chrome",
                      help ="Browser to run tests: chrome or firefox")
 
