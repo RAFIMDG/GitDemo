@@ -18,3 +18,6 @@ class BasePage:
     def get_text(self, locator):
         return self.wait.wait_for_visibility(locator).text
 
+    def is_displayed(self, locator):
+        return self.driver.wait.wait_for_visibility(locator).is_displayed()
+
