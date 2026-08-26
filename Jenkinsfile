@@ -45,8 +45,7 @@ pipeline {
                         export PYTHONPATH=$PWD
 
                         # Run tests and generate Allure results
-                        pytest -v --reruns ${RETRY_COUNT}  --reruns-delay 2 --alluredir=allure-results
-
+                        pytest -v --reruns ${RETRY_COUNT} --reruns-delay 2 --alluredir=allure-results --clean-alluredir
                         echo "===== Test Execution Completed ====="
                     '''
                 }
