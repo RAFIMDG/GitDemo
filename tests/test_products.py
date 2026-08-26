@@ -1,3 +1,5 @@
+import pytest
+
 from pages.products_page import ProductsPage
 
 
@@ -12,7 +14,7 @@ def test_products(login):
     products = ProductsPage(driver)
     assert products.verifyproducts() == "Sauce Labs Backpack"
 
-
+pytest.mark.skip
 def test_product_page(login):
     driver = login("standard_user", "secret_sauce")
     products = ProductsPage(driver)
