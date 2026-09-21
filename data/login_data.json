@@ -1,0 +1,45 @@
+{
+  "valid_credentials": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  "invalid_credentials": [
+    {
+      "id": "wrong_user_wrong_pass",
+      "username": "wrong_user",
+      "password": "wrong_pass",
+      "expected_error": "Username and password do not match"
+    },
+    {
+      "id": "locked_out_user",
+      "username": "locked_out_user",
+      "password": "secret_sauce",
+      "expected_error": "Sorry, this user has been locked out"
+    },
+    {
+      "id": "wrong_password",
+      "username": "standard_user",
+      "password": "wrong_pass",
+      "expected_error": "Username and password do not match"
+    },
+    {
+      "id": "empty_credentials",
+      "username": "",
+      "password": "",
+      "expected_error": "Username is required"
+    },
+    {
+      "id": "empty_password",
+      "username": "standard_user",
+      "password": "",
+      "expected_error": "Password is required"
+    }
+  ],
+  "all_users": [
+    {"username": "standard_user", "password": "secret_sauce", "type": "standard"},
+    {"username": "problem_user", "password": "secret_sauce", "type": "problem"},
+    {"username": "performance_glitch_user", "password": "secret_sauce", "type": "slow"},
+    {"username": "error_user", "password": "secret_sauce", "type": "error"},
+    {"username": "visual_user", "password": "secret_sauce", "type": "visual"}
+  ]
+}

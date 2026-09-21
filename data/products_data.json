@@ -1,0 +1,21 @@
+{
+  "expected_products": [
+    "Sauce Labs Backpack",
+    "Sauce Labs Bike Light",
+    "Sauce Labs Bolt T-Shirt",
+    "Sauce Labs Fleece Jacket",
+    "Sauce Labs Onesie",
+    "Test.allTheThings() T-Shirt (Red)"
+  ],
+  "sort_options": {
+    "name_asc": "Name (A to Z)",
+    "name_desc": "Name (Z to A)",
+    "price_low_high": "Price (low to high)",
+    "price_high_low": "Price (high to low)"
+  },
+  "checkout": {
+    "first_name": "Test",
+    "last_name": "User",
+    "postal_code": "560001"
+  }
+}
