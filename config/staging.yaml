@@ -1,0 +1,29 @@
+# Staging Environment Configuration
+base_url: "https://www.saucedemo.com/"
+browser: "chrome"
+headless: true
+
+credentials:
+  username: "standard_user"
+  password: "secret_sauce"
+
+timeouts:
+  implicit: 10
+  explicit: 15
+  page_load: 60
+  polling_interval: 0.5
+
+logging:
+  level: "INFO"
+  file: "automation.log"
+
+paths:
+  screenshots: "reports/screenshots"
+  downloads: "reports/downloads"
+
+retry:
+  count: 3
+  delay: 3
+
+grid:
+  url: null

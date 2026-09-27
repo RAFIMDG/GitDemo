@@ -1,0 +1,34 @@
+# QA Environment Configuration
+base_url: "https://www.saucedemo.com/"
+browser: "chrome"
+headless: false
+
+credentials:
+  username: "standard_user"
+  password: "secret_sauce"
+
+timeouts:
+  implicit: 5
+  explicit: 10
+  page_load: 30
+  polling_interval: 0.5
+
+logging:
+  level: "DEBUG"
+  file: "automation.log"
+
+paths:
+  screenshots: "reports/screenshots"
+  downloads: "reports/downloads"
+
+retry:
+  count: 2
+  delay: 2
+
+grid:
+  url: null  # Set to "http://localhost:4444/wd/hub" for Selenium Grid
+
+allure:
+  clean_results: true
+  results_dir: "allure-results"
+  report_dir: "allure-report"

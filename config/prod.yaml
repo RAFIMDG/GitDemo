@@ -1,0 +1,29 @@
+# Production Environment Configuration (read-only / smoke tests)
+base_url: "https://www.saucedemo.com/"
+browser: "chrome"
+headless: true
+
+credentials:
+  username: "standard_user"
+  password: "secret_sauce"
+
+timeouts:
+  implicit: 10
+  explicit: 20
+  page_load: 60
+  polling_interval: 1.0
+
+logging:
+  level: "WARNING"
+  file: "automation.log"
+
+paths:
+  screenshots: "reports/screenshots"
+  downloads: "reports/downloads"
+
+retry:
+  count: 3
+  delay: 5
+
+grid:
+  url: null

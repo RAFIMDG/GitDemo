@@ -1,0 +1,6 @@
+test_id,first_name,last_name,zip_code,expected_result,description
+valid_checkout,John,Doe,90210,success,Standard checkout with valid info
+empty_first_name,,Doe,90210,Error: First Name is required,Missing first name
+empty_last_name,John,,90210,Error: Last Name is required,Missing last name
+empty_zip,John,Doe,,Error: Postal Code is required,Missing postal code
+all_empty,,,,Error: First Name is required,All fields empty
